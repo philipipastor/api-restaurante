@@ -42,7 +42,7 @@ class TableSessions {
                 parse(req.params.id)
 
             const sessions = await knex<TableSessionsRepository>("tables_sessions").select().where({ id }).first()
-
+            
             if (!sessions) {
                 throw new AppError("Essa mesa não está aberta")
             }
